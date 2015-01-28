@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Angular - Test</title>
+
+	<link rel="shortcut icon" type="image/png" href="jasmine/lib/jasmine-2.1.3/jasmine_favicon.png">
+	<link rel="stylesheet" type="text/css" href="jasmine/lib/jasmine-2.1.3/jasmine.css"> 
+	<script type="text/javascript" src="jasmine/lib/jasmine-2.1.3/jasmine.js"></script>
+	<script type="text/javascript" src="jasmine/lib/jasmine-2.1.3/jasmine-html.js"></script>
+	<script type="text/javascript" src="jasmine/lib/jasmine-2.1.3/boot.js"></script>
+
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js"></script>
+	<script type="text/javascript" src="http://code.angularjs.org/1.2.7/angular-mocks.js"></script>
+    <script src="./auth.client.js"></script>
+	
+
+  </head>
+  <body ng-app="myApp">
+    <div ng-controller="UserCtrl">
+      <form ng-submit="submit()">
+        <input type="submit" value="Send Auth Request" />
+      </form>
+      <div>{{error}}</div>
+      <div ng-show="isAuthenticated">
+		  <div>{{sessionStorageMessage}}</div>
+		  <br>
+		  <div>{{message}}</div>
+
+			<a ng-click="logout()" href="">Logout (Erases sessionStorage) </a>
+      </div>
+    </div>
+  </body>
+</html>
